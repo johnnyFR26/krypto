@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'MatrixCode';
+  src: url('MatrixCodeNFI.ttf');
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #010317;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@keyframes luz {
+    from {background-position-y: 100vh;}
+    to {background-position-y: 0;}
+}
+
+#timer{
+    background-color: #224;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    width: auto;
+    right: 20px;
+}
+
+#matrixCanvas{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.content{
+    box-sizing: border-box;
+    position: absolute;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 20px;
+
+    max-width: 50vw;
+    min-width: 300px;
+
+    backdrop-filter: blur(3px);
+    box-shadow: 
+    inset 0 0 30px 0 #ffffff20,
+    0 0 10px 0 #000000;
+    border: 1px solid #ffffff4d;
+
+    display: flex;
+    flex-wrap: wrap;
+    *{
+        width: 100%;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    textarea, input{
+        border-radius: 10px;
+        border: 0;
+        padding: 5px;
+
+        box-shadow: inset 0 0 10px 0 #ffffff20;
+        background-color: #0f0f1c;
+        color: #fff;
+        border: 1px solid #ffffff4d;
+    }
+
+    label{
+        margin-top: 30px;
+    }
+
+    .chave{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 10px 0;
+        gap: 10px;
+
+        label{
+            width: 100%;
+        }
+
+        button{
+            width: 80px;
+            border-radius: 5px;
+            border: 1px solid #ffffff4d;
+            color: #fff;
+
+            cursor: pointer;
+
+            &.cripto{
+                background-color: #0aa126;
+                &:hover:not(:active){background-color: #11d735;}
+            }
+            &.descripto{
+                background-color: #0c3278;
+                &:hover:not(:active){background-color: #1249ae;}
+            }
+
+            &:disabled{
+                background-color: transparent;
+                color: #ffffff4d;
+                transition: .05s;
+            }
+
+            transition: .1s;
+            &:hover{
+                color: #000;
+                scale: 1.1;
+                transition: .2s;
+            }
+        }
+    }
+}
